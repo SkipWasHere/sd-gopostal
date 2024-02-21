@@ -27,12 +27,14 @@ gopostal = {
     },
 ```
 
+
 ***Item Name Setup***
 goto > resources\[qb]\qb-core\shared > and add the code below add it to any part of your .lua code
 
 ```
     gopostalpapers                    = { name = 'gopostal_papers', label = 'GoPostal Papers', weight = 1000, type = 'item', image = 'gopostal.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'This is the GoPostal Papers' },
 ```
+
 
 ***Cityhall Setup***
 goto > resources\[qb]\qb-cityhall > and add the code below at **Config.AvailableJobs**
@@ -41,8 +43,10 @@ goto > resources\[qb]\qb-cityhall > and add the code below at **Config.Available
 ['gopostal'] = { ['label'] = 'GoPostal', ['isManaged'] = false }
 ```
 
+
 ***Inventory Setup***
 goto > [qb]\qb-inventory\html\images > and add the gopostal.png
+
 
 ```
 inside of the [image] folder
