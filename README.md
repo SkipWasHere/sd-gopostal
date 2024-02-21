@@ -4,6 +4,8 @@ If needing help please do join my discord below
 
 **discord for support - [https://discord.gg/GB3QJRDSEx](https://discord.gg/TwfWs6wmMt)**
 
+FOR NOW THIS IS ONLY FOR QBCORE I WILL PUSH A UPDATE FUTHER IN THE FUTURE FOR ESX
+
 ## Features
 - Fast setup based!
 - Easy Config.lua
@@ -43,4 +45,6 @@ goto > resources\[qb]\qb-cityhall > and add the code below at **Config.Available
 
 ```
 ensure sd-gopostal
+
+inside of the fxmanifest.lua you can undash the ox-lib if using ox-lib for targets!
 ```
