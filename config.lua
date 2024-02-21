@@ -4,11 +4,10 @@ Config.Variables = {
     Framework = 'qb', -- QB/ESX/None -- set to none to use k_diseases:forceStart trigger instead
     Notify = 'qb', -- QB/ESX/Custom -- custom function below
     target = 'qb', -- 'qb' or 'ox',
-    item = '' -- this is the item that you can put for players to get when putting away papers/posts
 }
 
 Config.Database = {
-    Job = 'police', -- this is the job players need to use the gopostal
+    Job = 'gopostal', -- this is the job players need to use the gopostal
     SalaryPayOut = '50'  -- this is the salary payout
 }
 
@@ -50,6 +49,14 @@ Config.PostalBoxes = {
         vector3(122.3, -165.68, 53.67)
     }
 }
+
+
+
+
+
+
+
+
 
 
 if not IsDuplicityVersion() then --Client Side

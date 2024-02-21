@@ -2,10 +2,10 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 -- LOCALS
 local onDuty = false
+local truck
 local startJob
 local isDeliverySignedIn = false
 local PackageObject = nil
-local truck
 
 CreateThread(function()
     local sleep = 0
@@ -204,11 +204,12 @@ function SetupJobs()
         SetBlipRouteColour(chopBlip, 3)
         for k,v in pairs(currentJobPositions) do
             hasCompleted = false
-            SetNewWaypoint(chopBlip)
+            --SetNewWaypoint(v.x, v.y)
             while not hasCompleted do
                 local jobStatus = JobStatus(v)
                 if jobStatus then
                     TriggerServerEvent("sd-gopostal:removeItem")
+                    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['gopostal_papers'], 'remove')
                     hasCompleted = true
                 end
                 Wait(0)
@@ -252,7 +253,7 @@ end
 
 RegisterNetEvent("sd-gopostal:startJob")
 AddEventHandler("sd-gopostal:startJob", function()
-    if HasJob() then
+    if HasJob(jobName) then
         onDuty = not onDuty
         if onDuty then
             TriggerEvent("sd-gopostal:SpawnTruck", -1)
@@ -262,10 +263,9 @@ AddEventHandler("sd-gopostal:startJob", function()
             end
         end
     else
-        QBCore.Functions.Notify("You need to have the 'sd-gopostal' job to start working.")
+        QBCore.Functions.Notify("You need to have the 'gopostal' job to start working.")
     end
 end)
-
 
 function HasJob(jobName)
     PlayerData = QBCore.Functions.GetPlayerData()
@@ -299,6 +299,7 @@ RegisterNetEvent('sd-gopostal:takepackage', function()
 		LoadAnim("anim@heists@box_carry@")
 		TaskPlayAnim(PlayerPedId(), "anim@heists@box_carry@", "idle", 8.0, 8.0, -1, 50, 0, false, false, false)
         TriggerServerEvent("sd-gopostal:giveItem")
+        TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['gopostal_papers'], 'add')
         onDuty = true
     end
 end)
