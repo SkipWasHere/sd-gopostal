@@ -6,6 +6,8 @@ If needing help please do join my discord below
 
 FOR NOW THIS IS ONLY FOR QBCORE I WILL PUSH A UPDATE FUTHER IN THE FUTURE FOR ESX
 
+P.S - This is my very first script from scratch... i will add third eye for post boxes in the future too.
+
 ## Features
 - Fast setup based!
 - Easy Config.lua
