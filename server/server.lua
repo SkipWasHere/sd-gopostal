@@ -12,11 +12,13 @@ AddEventHandler("sd-gopostal:jobCompleted", function()
         -- You can adjust the amount or payment method as per your requirements
     end
     jobNumber = math.random(1, #Config.PostalBoxes)
-        if jobNumber == lastNumber then
-            if jobNumber == #Config.PostalBoxes then
-                jobNumber = jobNumber - 1
-            else
-                jobNumber = jobNumber + 1
+    if jobNumber == lastNumber then
+        if jobNumber == #Config.PostalBoxes then
+            jobNumber = jobNumber -1
+        else
+            jobNumber = jobNumber +1
+        end
+    end
 end)
 
 RegisterServerEvent("sd-gopostal:playerEnteredVan")
