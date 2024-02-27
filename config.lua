@@ -1,7 +1,7 @@
 Config = {}
 
 Config.Variables = {
-    Framework = 'qb', -- QB/ESX/None -- set to none to use k_diseases:forceStart trigger instead
+    Framework = 'qb', -- QB/ESX/None
     Notify = 'qb', -- QB/ESX/Custom -- custom function below
     target = 'qb', -- 'qb' or 'ox',
 }
